@@ -1,0 +1,639 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	color: #044b6b;
+}
+
+a {
+	text-decoration: none;
+	color: #044b6b;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 20px;
+}
+
+p {
+	font-size: 14px;
+}
+
+/* MOBILE */
+
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.66%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.33%; }
+.col-5 { width: 41.66%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.33%; }
+.col-8 { width: 66.66%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.66%; }
+.col-12 { width: 100%; }
+
+.row:before, .row:after {
+content: ""; 
+            display: table; 
+}
+
+.row:after {
+            clear: both;
+}
+
+/* burger menu */
+
+.burgerMenu {
+	width: 50px;
+	color:  #fff;
+}
+
+.bars {
+	font-size: 30px;
+}
+
+#flyoutMenu {
+	background:#0c96a3;
+	text-align: center; 
+	width: 100%; 
+	height: 100vh;
+	position: absolute;
+	left: -100vw;
+	padding-top: 80px;
+	transition: left .5s linear;
+	z-index: 1;
+}
+
+#flyoutMenu a {
+	color: #fff; 
+	display: block;
+	margin: 30px 0;
+	font-size: 20px;
+}
+
+.checkBox {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 70px;
+	height: 70px;
+	display: block;
+	opacity: 0;
+	z-index: 9999;
+}
+
+.checkBox:hover {
+	cursor: pointer;
+}
+
+.checkBox:checked ~ #flyoutMenu {
+	left: 0px;
+}
+
+.checkBox:checked ~ .bars {
+	color: white;
+	z-index: 999;
+	position: relative;
+}
+
+/* nav */
+
+nav, .logout {
+	display: none;
+}
+
+/* header */
+
+.header {
+	background: #0c96a3;
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 30px;
+}
+
+.logo {
+	display: none;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+	color: #fff;
+}
+
+.info i {
+	font-size: 24px;
+	margin-right: 20px;
+}
+
+.info p {
+	font-weight: lighter;
+}
+
+/* container */
+
+.container {
+	padding: 0 40px;
+}
+
+/* rightNav */
+
+.rightNav {
+	margin: 50px 0;
+
+}
+
+/* calendar */
+
+.calendarContainer {
+	background: #bde5f2;
+	color: #fff;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 30px;
+	width: 300px;
+	padding: 20px 0;
+}
+
+#calendar {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#calendar p {
+	margin-bottom: 5px;
+}
+
+#calendar section {
+	margin:  auto;
+}
+
+section {
+	margin: 10px;
+}
+
+#calendar p strong  {
+	font-size: 18px;
+	text-align: center;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	color: #fff;
+}
+
+td {
+	padding: 5px;
+	text-align: center;
+}
+
+td:first-child {
+	color: red;
+}
+
+td:last-child {
+	color: royalblue;
+}
+
+td.is-disabled {
+	color: #ccc;
+}
+
+.calendarContainer .move {
+	margin-top: 5px;
+	padding: 0 70px;
+	display: flex;
+	justify-content: space-around;
+}
+
+/* upcoming */
+
+.upcoming .assignment {
+	padding: 0 30px;
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.upcoming .assignment .date {
+	margin-right: 20px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* leftNav */
+
+.leftNav {
+	margin-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+.leftNav a {
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+/* dashboard */
+/* annette : modified assignment box style can be used on other pages */
+/* #dashboard .assignments {
+	margin: 50px 0;
+}
+
+#dashboard .assignments .assignment {
+	margin-bottom: 30px;
+	padding: 30px;
+	border: #7ccbe5 solid 3px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#dashboard .assignments .assignment i {
+	font-size: 30px;
+	color: #e99442;
+} */
+
+/* assignment list, grade list, grade detail */
+
+.assignmentList .assignments {
+	margin: 50px 0;
+}
+
+.assignmentList .assignments .assignment, .gradeList .grade, .gradeDetail .grade {
+	margin-bottom: 30px;
+	padding: 30px;
+	border: #7ccbe5 solid 3px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.assignmentList .assignments .assignment i, .gradeList .grade i {
+	font-size: 30px;
+	color: #e99442;
+} 
+
+/* grade details */
+
+.gradeDetail .grade {
+	display: flex;
+	flex-direction: column;
+}
+
+.gradeDetail .grade .detail {
+	margin-bottom: 20px;
+}
+
+.gradeDetail .grade .detail h3 {
+	margin-bottom: 10px;
+}
+
+.gradeDetail .grade .cta {
+	padding: 10px 20px;
+	background: #e99442;
+	color: #fff;
+}
+
+/* assignment details */
+
+.Courses{
+	display: none;
+}
+
+/* add assignment */
+
+.assignmentAdd {
+	border: #7ccbe5 solid 3px;
+	padding: 20px 50px;
+	height: 100%;
+}
+.assignmentAdd h2 {
+	margin-bottom: 20px;
+}
+.assignmentAdd label {
+	display: block;
+}
+.assignmentAdd input, textarea {
+    width: 200px;
+    height: 3em;
+    padding: 4px;
+    border: 2px solid #044b6b;
+    border-radius: 4px;
+    outline: none;
+}
+.assignmentAdd input[type=submit] {
+	background-color: #e99442;
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-size: 1em;
+    margin-top: 10px;
+    border: 2px solid #e99442;
+    outline: none;
+}
+.errorpopup {
+  opacity: 0; 
+  transition: opacity 1s linear; 
+  color: #CD5C5C;
+}
+.error .errorpopup {
+  opacity: 1;
+}
+
+/* burger menu */
+
+.tinyMenu{
+	width: 50px;
+	color:  #fff;
+	position: relative;
+}
+
+.bars2 {
+	font-size: 30px;
+	color: #044b6b;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+#flyoutMenu2 {
+	background:#0c96a3;
+	text-align: center; 
+	width: 100%; 
+	height: 100vh;
+	position: absolute;
+	left: -100vw;
+	top: -20px;
+	transition: left .5s linear;
+	z-index: 1;
+}
+
+#flyoutMenu2 a,
+#flyoutMenu2 p{
+	color: #fff; 
+	display: block;
+	margin: 30px 0;
+	font-size: 20px;
+}
+
+#flyoutMenu2 h3{
+	display: inline-block;
+	margin: 15px;
+}
+
+.checkBox2 {
+	width: 70px;
+	height: 70px;
+	display: block;
+	opacity: 0;
+	z-index: 9999;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.checkBox2:hover {
+	cursor: pointer;
+}
+
+.checkBox2:checked ~ #flyoutMenu2 {
+	left: 0px;
+	width: 100vw;
+}
+
+.checkBox2:checked ~ .bars2 {
+	color: white;
+	z-index: 999;
+	position: relative;
+}
+
+/* Assignment Submission Form */
+
+.form-main{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 50px
+}
+
+.form-main .fieldgroup{
+	margin-bottom: 30px;
+}
+
+.form-main label{
+	display: block;
+	margin-bottom: 10px;
+}
+
+.form-main textarea{
+	width: 100%;
+	height: 50px;
+	border: .5px solid lightgray;
+	border-radius: 3px;
+}
+
+.form-main input[type=submit]{
+	background: #0c96a3; 
+	border: none;
+	width: 100%;
+	font-size: 14px;
+	padding: 5px;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1.3px;
+}
+
+
+
+/* DESKTOP */
+
+@media only screen and (min-width: 700px) {
+
+	.col-lg-1 { width: 8.33%; }
+	.col-lg-2 { width: 16.66%; }
+	.col-lg-3 { width: 25%; }
+	.col-lg-4 { width: 33.33%; }
+	.col-lg-5 { width: 41.66%; }
+	.col-lg-6 { width: 50%; }
+	.col-lg-7 { width: 58.33%; }
+	.col-lg-8 { width: 66.66%; }
+	.col-lg-9 { width: 75%; }
+	.col-lg-10 { width: 83.33%; }
+	.col-lg-11 { width: 91.66%; }
+	.col-lg-12 { width: 100%; }
+
+	.row:before, .row:after {
+	content: ""; 
+	            display: table; 
+	}
+
+	.row:after {
+	            clear: both;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-size: 24px;
+	}
+
+	p {
+		font-size: 18px;
+	}
+
+	/* burger menu */
+
+	.burgerMenu {
+		display: none;
+	}
+
+	/* nav */ 
+
+	nav {
+		display: flex;
+	}
+
+	nav a {
+		margin: 0 50px;
+		font-size: 18px;
+		color: #fff;
+		border-bottom: transparent;
+		border-radius: 0;
+	}
+
+	nav a:hover {
+		border-bottom: 2px solid white;
+		transition: border-bottom 0.5s linear;
+		border-radius: 0;
+	}
+
+	/* header */
+
+	.header {
+		height: 120px;
+		padding: 20px 100px;
+		position: fixed;
+		top: 0;
+		z-index: 999;
+	}
+
+	.logo {
+		display: flex;
+		z-index: 10;
+	}
+
+	.logo h1{
+		background: url("../imgs/logo-white.png");
+		background-size: cover;
+		width: 130px;
+		height: 50px;
+		text-indent: -9999px;
+	}
+
+	.logo h1 a {
+		background-image: url("../imgs/logo-white.png");
+		background-size: cover;
+	}
+
+	.info .student {
+		margin-right: 30px;
+	}
+
+	/* logout */
+
+	.logout {
+		display: flex;
+	}
+
+	.logout a {
+		background: #fff;
+		color: #0c96a3;
+		padding: 10px 20px;
+	}
+
+	/* container */
+
+	.container {
+		margin-top: 180px;
+		padding: 0 100px 0 0;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+
+	/* rightNav */
+
+	.rightNav {
+		margin: 0;
+	}
+
+	/* calendar */
+
+	.calendarContainer {
+		margin: 0;
+		margin-bottom: 50px;
+	}
+
+	/* leftNav */
+	.leftNav {
+		background: #bde5f2;
+		margin: 0;
+		order: 2;
+		padding: 0 50px;
+		padding-top: 60px;
+		margin-top: -60px;
+		height: 100vh;
+	}
+
+	/* dashboard */
+
+	#dashboard .assignments {
+		margin: 0 0 0 200px;
+
+	}
+
+	.Courses{
+		background: #bde5f2;
+		margin-top: 180px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 25px;
+		display: block;
+	}
+	.Courses p{
+		padding-top: 5px;
+		padding-bottom: 25px;
+	}
+	.Courses h3{
+		display: inline-block;
+		padding-bottom: 30px;
+	}
+	.tinyMenu{
+		display: none;
+	}
+
+	/* grade list, grade detail */
+	.gradeList, .gradeDetail {
+		padding: 0 80px;
+	}
+
+	/* add assignment */
+	.assignmentAdd {
+		margin: 0px 50px;
+	}
+
+	.assignmentAdd input, textarea {
+	    width: 100%;
+	}
+	.assignmentAdd input[type=submit] {
+	    width: 240px;
+	}
+	.assignmentAdd input[type=submit]:hover {
+	    opacity: .8;
+	}
+}
